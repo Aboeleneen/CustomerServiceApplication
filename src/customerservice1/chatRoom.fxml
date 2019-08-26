@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customerservice1.chatRoomController">
+   <children>
+      <SplitPane dividerPositions="0.4882943143812709" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="chat" layoutX="16.0" layoutY="34.0" prefHeight="296.0" prefWidth="260.0" />
+                  <TextArea fx:id="message" layoutX="16.0" layoutY="342.0" prefHeight="42.0" prefWidth="200.0" promptText="write a message" />
+                  <Button layoutX="224.0" layoutY="345.0" mnemonicParsing="false" onAction="#sendAmessage" prefHeight="35.0" prefWidth="52.0" text="SEND" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane prefHeight="400.0" prefWidth="378.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="information">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Text layoutX="35.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal information:" wrappingWidth="127.09375">
+                                       <font>
+                                          <Font name="System Bold Italic" size="12.0" />
+                                       </font>
+                                    </Text>
+                                    <GridPane layoutX="81.0" layoutY="38.0" prefHeight="90.0" prefWidth="258.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="90.0" text="Fullname:" />
+                                          <Label text="Username:" GridPane.rowIndex="1" />
+                                          <Label fx:id="customer_id" text="customerID" GridPane.rowIndex="2" />
+                                          <Label fx:id="fullnameLabel" prefHeight="17.0" prefWidth="181.0" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="username" prefHeight="17.0" prefWidth="181.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="75.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="183.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                    <Text layoutX="35.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact information:" wrappingWidth="133.13671875">
+                                       <font>
+                                          <Font name="System Bold Italic" size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <GridPane layoutX="81.0" layoutY="164.0" prefHeight="90.0" prefWidth="267.0">
+                                       <children>
+                                          <Label text="phone :" />
+                                          <Label text="email :" GridPane.rowIndex="1" />
+                                          <Label text="address :" GridPane.rowIndex="2" />
+                                          <Label fx:id="phone" prefHeight="10.0" prefWidth="178.0" text="Label" GridPane.columnIndex="1" />
+                                          <Label fx:id="email" prefHeight="10.0" prefWidth="178.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="address" prefHeight="10.0" prefWidth="178.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="64.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                    <Button layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="25.0" prefWidth="178.0" text="waiting Customers" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="history">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
