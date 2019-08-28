@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" onMouseExited="#disableStartChatButton" onMouseReleased="#disableStartChatButton" prefHeight="445.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FXMLController">
+   <children>
+      <Text layoutX="187.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waiting Customers">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableView" layoutX="26.0" layoutY="63.0" onMouseClicked="#enableStartChatButton" prefHeight="332.0" prefWidth="422.0">
+        <columns>
+          <TableColumn fx:id="chat_id" prefWidth="75.0" text="chat_id" />
+          <TableColumn fx:id="fullname" prefWidth="75.0" text="fullname" />
+            <TableColumn fx:id="username" prefWidth="114.0" text="username" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="startChatButton" layoutX="469.0" layoutY="107.0" mnemonicParsing="false" onAction="#StartChat" prefHeight="25.0" prefWidth="96.0" text="Start Chat" />
+      <Button layoutX="469.0" layoutY="186.0" mnemonicParsing="false" onAction="#changeScene" prefHeight="25.0" prefWidth="96.0" text="logout" />
+      <Button layoutX="469.0" layoutY="148.0" mnemonicParsing="false" onAction="#updateTable" prefHeight="25.0" prefWidth="96.0" text="Refresh" />
+   </children>
+</AnchorPane>

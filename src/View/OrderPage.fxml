@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="615.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="View.OrderPageController">
+   <children>
+      <Text layoutX="202.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Inofrmation" underline="true">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableView" layoutX="34.0" layoutY="113.0" prefHeight="301.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="product_id" prefWidth="75.0" text="product_id" />
+          <TableColumn fx:id="product_name" prefWidth="75.0" text="product_name" />
+            <TableColumn fx:id="size" prefWidth="75.0" text="size" />
+            <TableColumn fx:id="color" prefWidth="75.0" text="color" />
+            <TableColumn fx:id="category" prefWidth="75.0" text="category" />
+            <TableColumn fx:id="price" prefWidth="75.0" text="price" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="95.0" layoutY="59.0" text="OrderID :">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="orderID_label" layoutX="175.0" layoutY="59.0" prefHeight="17.0" prefWidth="133.0" text="Label" />
+      <Label layoutX="86.0" layoutY="83.0" text="customerID :">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="customerID_label" layoutX="175.0" layoutY="83.0" prefHeight="17.0" prefWidth="100.0" text="Label" />
+      <Label layoutX="327.0" layoutY="59.0" text="total price :">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalPrice_label" layoutX="411.0" layoutY="59.0" prefHeight="17.0" prefWidth="126.0" text="Label" />
+      <Label layoutX="317.0" layoutY="83.0" text="Payment type :">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="paymentType_label" layoutX="411.0" layoutY="83.0" prefHeight="17.0" prefWidth="153.0" text="Label" />
+   </children>
+</AnchorPane>
