@@ -56,7 +56,7 @@ public class FeedBackController implements Initializable {
         this.customerServiceID.setText(Integer.toString(selectedCustomer.getCustomerService_id()));
     }
     
-    // terminate the chat and return to waitingCustomers scene
+    // terminate the feedback and return to waitingCustomers scene
     @FXML
     private void changeScene(ActionEvent event) throws IOException, SQLException {
             FXMLLoader loader = new FXMLLoader();
@@ -67,7 +67,11 @@ public class FeedBackController implements Initializable {
             // pass information to waitingCustomers scene
             FXMLController controller = loader.getController();
             controller.initData(getCustomerService());
-          
+            
+            // pass feedback to database
+            this.insertFeedback();
+            
+            
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);
             window.show();        
@@ -79,6 +83,14 @@ public class FeedBackController implements Initializable {
     private CustomerService getCustomerService() throws SQLException{
         DBConnect db = DBConnect.getInstance();
         return db.getCustomerService(selectedCustomer.getCustomerService_id());
+    }
+    
+    /**
+     * insert feedback into database
+     */
+    private void insertFeedback() throws SQLException{
+        DBConnect db = DBConnect.getInstance();
+        db.insertFeedback(selectedCustomer.getCustomerService_id(), selectedCustomer.getCustomer_id(), this.customerProblem.getText(), this.feedback.getText());
     }
     
     

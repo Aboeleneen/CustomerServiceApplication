@@ -221,4 +221,24 @@ public class DBConnect {
         rs.first();
         return rs.getString("payment_name");
     }
+    
+    /**
+     * insert feedback from customer service form
+     * @param customerService_id
+     * @param customer_id
+     * @param problem
+     * @param problem_feedback
+     * @throws java.sql.SQLException
+     */
+    public void insertFeedback(int customerService_id , int customer_id , String problem , String problem_feedback) throws SQLException{
+        String query = "Insert into feedback(customerService_id , customer_id , problem , problem_feedback) values(?,?,?,?) ";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setInt(1, customerService_id);
+        ps.setInt(2, customer_id);
+        ps.setString(3, problem);
+        ps.setString(4, problem_feedback);
+        ps.execute();
+    }
+    
+    
 }
