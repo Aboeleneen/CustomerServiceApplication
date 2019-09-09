@@ -5,9 +5,11 @@
         <group>
             <file>file:/D:/CSED/customerService1/src/Model/Customer.java</file>
             <file>file:/D:/CSED/customerService1/src/View/OrderPage.fxml</file>
+            <file>file:/D:/CSED/customerService1/src/View/style.css</file>
             <file>file:/D:/CSED/customerService1/nbproject/jfx-impl.xml</file>
             <file>file:/D:/CSED/customerService1/src/View/FeedBackController.java</file>
             <file>file:/D:/CSED/customerService1/src/View/FXMLController.java</file>
+            <file>file:/D:/CSED/customerService1/src/View/ForgotPassword.fxml</file>
             <file>file:/D:/CSED/customerService1/src/View/FeedBack.fxml</file>
             <file>file:/D:/CSED/customerService1/src/Model/Product.java</file>
             <file>file:/D:/CSED/customerService1/src/View/chatRoomController.java</file>
@@ -15,6 +17,7 @@
             <file>file:/D:/CSED/customerService1/src/View/FXML.fxml</file>
             <file>file:/D:/CSED/customerService1/nbproject/build-impl.xml</file>
             <file>file:/D:/CSED/customerService1/src/Model/Order.java</file>
+            <file>file:/D:/CSED/customerService1/src/View/ForgotPasswordController.java</file>
             <file>file:/D:/CSED/customerService1/src/View/chatRoom.fxml</file>
             <file>file:/D:/CSED/customerService1/src/View/Main.java</file>
             <file>file:/D:/CSED/customerService1/src/Model/CustomerService.java</file>

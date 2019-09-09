@@ -7,41 +7,55 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.chatRoomController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="615.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.chatRoomController">
    <children>
       <SplitPane dividerPositions="0.46492659053833607" prefHeight="445.0" prefWidth="615.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane id="back" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <ListView fx:id="chat" layoutX="16.0" layoutY="34.0" prefHeight="333.0" prefWidth="260.0" />
                   <TextArea fx:id="message" layoutX="16.0" layoutY="380.0" prefHeight="42.0" prefWidth="200.0" promptText="write a message" />
-                  <Button layoutX="224.0" layoutY="384.0" mnemonicParsing="false" onAction="#sendAmessage" prefHeight="29.0" prefWidth="52.0" text="SEND" />
+                  <Button id="button" layoutX="221.0" layoutY="386.0" mnemonicParsing="false" onAction="#sendAmessage" prefHeight="30.0" prefWidth="55.0" text="SEND" />
+                  <Text fill="#fffefe" layoutX="123.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat" wrappingWidth="55.0">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TabPane prefHeight="443.0" prefWidth="607.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane id="back" prefHeight="443.0" prefWidth="607.0" tabClosingPolicy="UNAVAILABLE">
                      <tabs>
-                        <Tab text="information">
+                        <Tab text="Information">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="607.0">
+                              <AnchorPane id="back" minHeight="0.0" minWidth="0.0" prefHeight="436.0" prefWidth="607.0">
                                  <children>
-                                    <Text layoutX="35.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal information:" wrappingWidth="127.09375">
+                                    <Text fill="WHITE" layoutX="31.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal information :" wrappingWidth="140.09375">
                                        <font>
-                                          <Font name="System Bold Italic" size="12.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Text>
                                     <GridPane layoutX="81.0" layoutY="38.0" prefHeight="90.0" prefWidth="258.0">
                                        <children>
-                                          <Label prefHeight="17.0" prefWidth="90.0" text="Fullname:" />
-                                          <Label text="Username:" GridPane.rowIndex="1" />
-                                          <Label text="customerID" GridPane.rowIndex="2" />
-                                          <Label fx:id="fullnameLabel" prefHeight="17.0" prefWidth="181.0" text="Label" GridPane.columnIndex="1" />
-                                          <Label fx:id="username" prefHeight="17.0" prefWidth="181.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label fx:id="customer_id" prefHeight="17.0" prefWidth="181.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label prefHeight="17.0" prefWidth="90.0" text="Full Name :" textFill="#fcfcfc">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label text="User Name :" textFill="#fcfcfc" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label text="Customer ID :" textFill="#fcfcfc" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="fullnameLabel" prefHeight="17.0" prefWidth="181.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" />
+                                          <Label fx:id="username" prefHeight="17.0" prefWidth="181.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="customer_id" prefHeight="17.0" prefWidth="181.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                        </children>
                                        <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="75.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="183.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="10.0" prefWidth="84.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="174.0" />
                                        </columnConstraints>
                                        <rowConstraints>
                                           <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -49,19 +63,28 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                     </GridPane>
-                                    <Text layoutX="35.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact information:" wrappingWidth="133.13671875">
+                                    <Text fill="WHITE" layoutX="35.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact information :" wrappingWidth="133.13671875">
                                        <font>
-                                          <Font name="System Bold Italic" size="13.0" />
+                                          <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Text>
                                     <GridPane layoutX="81.0" layoutY="164.0" prefHeight="90.0" prefWidth="267.0">
                                        <children>
-                                          <Label text="phone :" />
-                                          <Label text="email :" GridPane.rowIndex="1" />
-                                          <Label text="address :" GridPane.rowIndex="2" />
-                                          <Label fx:id="phone" prefHeight="10.0" prefWidth="178.0" text="Label" GridPane.columnIndex="1" />
-                                          <Label fx:id="email" prefHeight="10.0" prefWidth="178.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label fx:id="address" prefHeight="10.0" prefWidth="178.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Phone :" textFill="#fcfcfc">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label text="Email :" textFill="#fcfcfc" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label text="Address :" textFill="#fcfcfc" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="phone" prefHeight="10.0" prefWidth="178.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" />
+                                          <Label fx:id="email" prefHeight="10.0" prefWidth="178.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="address" prefHeight="10.0" prefWidth="178.0" text="Label" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                        </children>
                                        <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="64.0" />
@@ -73,27 +96,27 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                     </GridPane>
-                                    <Button layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#EndChat" prefHeight="25.0" prefWidth="178.0" text="End Chat" />
+                                    <Button id="button" layoutX="89.0" layoutY="284.0" mnemonicParsing="false" onAction="#EndChat" prefHeight="25.0" prefWidth="178.0" text="End Chat" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab text="history">
+                        <Tab text="History">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="402.0" prefWidth="607.0">
                                  <children>
                                     <TableView fx:id="tableView" layoutX="8.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="304.0">
                                       <columns>
-                                        <TableColumn fx:id="orderID_column" prefWidth="51.0" text="order_id" />
-                                        <TableColumn fx:id="brandName_column" prefWidth="100.0" text="brand_name" />
-                                          <TableColumn fx:id="price_column" prefWidth="154.0" text="price" />
-                                          <TableColumn fx:id="date_column" prefWidth="75.0" text="date" />
+                                        <TableColumn fx:id="orderID_column" prefWidth="51.0" text="Order ID" />
+                                        <TableColumn fx:id="brandName_column" prefWidth="100.0" text="Brand Name" />
+                                          <TableColumn fx:id="price_column" prefWidth="154.0" text="Price" />
+                                          <TableColumn fx:id="date_column" prefWidth="75.0" text="Date" />
                                       </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                        </columnResizePolicy>
                                     </TableView>
-                                    <Button layoutX="125.0" layoutY="375.0" mnemonicParsing="false" onAction="#dislay" text="show order" />
+                                    <Button id="button" layoutX="121.0" layoutY="375.0" mnemonicParsing="false" onAction="#dislay" text="Show Order" />
                                  </children></AnchorPane>
                            </content>
                         </Tab>

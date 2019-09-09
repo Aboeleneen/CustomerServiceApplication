@@ -7,48 +7,48 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FeedBackController">
+<AnchorPane id="back" prefHeight="445.0" prefWidth="615.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FeedBackController">
    <children>
-      <Text layoutX="207.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your FeedBack" underline="true">
+      <Text fill="#f8f8f8" layoutX="248.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback">
          <font>
-            <Font name="System Bold Italic" size="24.0" />
+            <Font name="System Bold" size="27.0" />
          </font>
       </Text>
       <AnchorPane layoutX="68.0" layoutY="88.0" prefHeight="305.0" prefWidth="480.0" style="-fx-border-color: black;">
          <children>
             <TextArea fx:id="feedback" layoutX="186.0" layoutY="189.0" prefHeight="64.0" prefWidth="266.0" />
-            <Label layoutX="48.0" layoutY="179.0" prefHeight="20.0" prefWidth="163.0" text="FeedBack :">
+            <Label layoutX="48.0" layoutY="179.0" prefHeight="20.0" prefWidth="163.0" text="FeedBack :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
             <TextArea fx:id="customerProblem" layoutX="186.0" layoutY="106.0" prefHeight="64.0" prefWidth="266.0" />
-            <Label layoutX="42.0" layoutY="106.0" prefHeight="20.0" prefWidth="163.0" text="CustomerProblem :">
+            <Label layoutX="42.0" layoutY="106.0" prefHeight="20.0" prefWidth="163.0" text="Customer Problem :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="customerServiceID" layoutX="205.0" layoutY="71.0" prefHeight="19.0" prefWidth="197.0" text="Label">
+            <Label fx:id="customerServiceID" layoutX="205.0" layoutY="71.0" prefHeight="19.0" prefWidth="197.0" text="Label" textFill="#eee8e8">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="30.0" prefHeight="20.0" prefWidth="163.0" text="CustomerID :">
+            <Label layoutX="42.0" layoutY="30.0" prefHeight="20.0" prefWidth="163.0" text="Customer ID :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="customerID" layoutX="205.0" layoutY="30.0" prefHeight="19.0" prefWidth="197.0" text="Label">
+            <Label fx:id="customerID" layoutX="205.0" layoutY="30.0" prefHeight="19.0" prefWidth="197.0" text="Label" textFill="#eee8e8">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="71.0" lineSpacing="7.0" prefHeight="20.0" prefWidth="163.0" text="CustomerServiceID :">
+            <Label layoutX="42.0" layoutY="71.0" lineSpacing="7.0" prefHeight="20.0" prefWidth="163.0" text="Customer Service ID :" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="184.0" layoutY="272.0" mnemonicParsing="false" onAction="#changeScene" text="Submit" />
+            <Button id="button" layoutX="198.0" layoutY="268.0" mnemonicParsing="false" onAction="#changeScene" text="Submit" />
          </children>
       </AnchorPane>
    </children>

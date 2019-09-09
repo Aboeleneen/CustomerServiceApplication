@@ -27,14 +27,14 @@ public class DBConnect {
     private static DBConnect DBConnectInstance ;
     // sigleton design pattern to have one instance of class
     private DBConnect(){
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = (com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/closet", "root", "");
-            st = con.createStatement();
-            
-        }catch(Exception e){
-            System.out.println("Done");
-        }
+            try{
+                Class.forName("com.mysql.jdbc.Driver");
+                con = (com.mysql.jdbc.Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/closet", "root", "");
+                st = con.createStatement();
+
+            }catch(Exception e){
+                System.out.println("Done");
+            }
     }
     
     // Ensure a class only has one instance, and provide a global point of access to it.
@@ -56,7 +56,7 @@ public class DBConnect {
                         "customer.email , customer.address , phones.phone , gender.gender_name " +
                         " , chats.chat_id , chats.customerService_id FROM chats JOIN customer JOIN phones JOIN gender " +
                         "ON chats.customer_id = customer.customer_id AND customer.phone_id=phones"+
-                        ".phone_id AND customer.gender_id = gender.gender_id "+
+                        ".phone_id and customer.gender_id = gender.gender_id "+
                         "where chats.customerService_id=1" ;
         rs = st.executeQuery(query);
         while(rs.next()){
@@ -98,7 +98,6 @@ public class DBConnect {
     */
     public CustomerService getCustomerService(int customerServiceID) throws SQLException{
         String query = "select * from customer_service where customerService_id = ?" ;
-            System.out.println("Done...." + customerServiceID);
         PreparedStatement ps = con.prepareStatement(query);
         ps.setInt(1,customerServiceID );
         rs = ps.executeQuery();
@@ -164,6 +163,7 @@ public class DBConnect {
         ObservableList<Order>  orders = FXCollections.observableArrayList();
         String query = "Select * from orders where customer_id = ? " ;
         PreparedStatement ps = con.prepareStatement(query);
+        System.out.println("Fuck "  + customer_id);
         ps.setInt(1, customer_id);
         rs = ps.executeQuery();
         while(rs.next()){

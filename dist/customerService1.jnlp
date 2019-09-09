@@ -8,7 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="customerService1.jar" size="48919" download="eager" />
+    <jar href="customerService1.jar" size="113314" download="eager" />
+    <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.48-bin.jar" size="1006959" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="customerService1" >

@@ -88,5 +88,21 @@ public class FXMLDocumentController implements Initializable {
         return new CustomerService(username,customerService_id);
     }
     
+    /**
+     * forgot password
+     */
+    @FXML
+    public void forgotPassword(ActionEvent event) throws IOException, SQLException{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("ForgotPassword.fxml"));
+            Parent  waitingView = (Parent)loader.load();
+            Scene scene = new Scene(waitingView);
+           
+          
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+    }
+    
     
 }
