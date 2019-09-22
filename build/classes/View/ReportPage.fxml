@@ -14,7 +14,7 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Text>
-      <TableView layoutX="31.0" layoutY="69.0" prefHeight="328.0" prefWidth="570.0">
+      <TableView layoutX="31.0" layoutY="69.0" prefHeight="314.0" prefWidth="570.0">
         <columns>
           <TableColumn prefWidth="87.0" text="Brand Name" />
           <TableColumn prefWidth="271.0" text="Report" />
@@ -22,5 +22,6 @@
             <TableColumn prefWidth="118.0" text="Customer" />
         </columns>
       </TableView>
+      <Button id="button" layoutX="282.0" layoutY="396.0" mnemonicParsing="false" onAction="#back" text="BACK" />
    </children>
 </AnchorPane>

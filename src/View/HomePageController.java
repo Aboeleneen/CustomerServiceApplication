@@ -79,6 +79,9 @@ public class HomePageController implements Initializable {
             Parent  waitingView = (Parent)loader.load();
             Scene scene = new Scene(waitingView);
            
+             // pass information to waitingCustomers scene
+            ReportPageController controller = loader.getController();
+            controller.initData(currentCustomerService);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);
             window.show();
