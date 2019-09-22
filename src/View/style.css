@@ -19,9 +19,14 @@ and open the template in the editor.
     -fx-font-style:Bold;    
 }
 
-#ourLabel{
+#button:hover{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+#buttonPane:hover{
+    -fx-background-color: black;
     -fx-text-fill: white;
-    -fx-font-size:18px;
 }
 
 .table-view .column-header .nested-column-header

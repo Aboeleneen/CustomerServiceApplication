@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.CustomerService;
 import de.jensd.fx.glyphs.GlyphsDude;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcons;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -25,29 +27,43 @@ import javafx.stage.Stage;
  *
  * @author Lenovo
  */
-public class ForgotPasswordController implements Initializable {
+public class HomePageController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-    @FXML private BorderPane borderPane;
+    private CustomerService currentCustomerService;
+    @FXML
+    private BorderPane customerPane;
+    @FXML
+    private BorderPane brandPane;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        borderPane.setCenter(GlyphsDude.createIcon(FontAwesomeIcons.LOCK, "180px"));   
-    }     
+         customerPane.setCenter(GlyphsDude.createIcon(FontAwesomeIcons.USER, "160px"));
+         brandPane.setCenter(GlyphsDude.createIcon(FontAwesomeIcons.HOME, "160px"));
+    }    
+    
+     // pass infornation from login scene
+    public void initData(CustomerService currentCustomerService){
+        this.currentCustomerService=currentCustomerService;
+    }
     
     /**
-     * save password and return to login scene
+     * waiting customers scene
      */
     @FXML
-    public void confirm(ActionEvent event) throws IOException{
+    public void checkWaitingCustomers(MouseEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("FXMLDocument.fxml"));
+            loader.setLocation(getClass().getResource("FXML.fxml"));
             Parent  waitingView = (Parent)loader.load();
             Scene scene = new Scene(waitingView);
            
-            
+            // pass information to waitingCustomers scene
+            FXMLController controller = loader.getController();
+            controller.initData(currentCustomerService);
+          
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);
             window.show();

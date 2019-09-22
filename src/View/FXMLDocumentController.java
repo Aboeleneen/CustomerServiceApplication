@@ -21,6 +21,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -47,12 +49,12 @@ public class FXMLDocumentController implements Initializable {
         // check the validation of username and password 
         if(checkLogin()){
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("FXML.fxml"));
+            loader.setLocation(getClass().getResource("HomePage.fxml"));
             Parent  waitingView = (Parent)loader.load();
             Scene scene = new Scene(waitingView);
            
             // pass information to waitingCustomers scene
-            FXMLController controller = loader.getController();
+            HomePageController controller = loader.getController();
             controller.initData(getCustomerService());
           
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -102,6 +104,35 @@ public class FXMLDocumentController implements Initializable {
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(scene);
             window.show();
+    }
+    
+    /**
+     * 
+     */
+    @FXML
+    public void clickEnter(KeyEvent event) throws IOException, SQLException{
+        if(event.getCode().equals(KeyCode.ENTER)){
+            // check the validation of username and password 
+        if(checkLogin()){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("HomePage.fxml"));
+            Parent  waitingView = (Parent)loader.load();
+            Scene scene = new Scene(waitingView);
+           
+            // pass information to waitingCustomers scene
+            HomePageController controller = loader.getController();
+            controller.initData(getCustomerService());
+          
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+        }
+        // invalid username or password
+        else{
+            this.errorMessage.setText("Wrong username or password");
+        }
+        
+        }
     }
     
     

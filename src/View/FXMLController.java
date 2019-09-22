@@ -162,6 +162,22 @@ public class FXMLController implements Initializable {
         tableView.setItems(getWaitingCustomers());
     }
     
+    // return to home page
+    @FXML
+    public void back(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("HomePage.fxml"));
+            Parent  waitingView = (Parent)loader.load();
+            Scene scene = new Scene(waitingView);
+           
+            // pass information to waitingCustomers scene
+            HomePageController controller = loader.getController();
+            controller.initData(currentCustomerService);
+          
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+    }
     
     
    
