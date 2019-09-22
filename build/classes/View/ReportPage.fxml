@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="back" prefHeight="445.0" prefWidth="615.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ReportPageController">
+   <children>
+      <Text fill="WHITE" layoutX="229.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brand Reports">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <TableView layoutX="31.0" layoutY="69.0" prefHeight="328.0" prefWidth="570.0">
+        <columns>
+          <TableColumn prefWidth="87.0" text="Brand Name" />
+          <TableColumn prefWidth="271.0" text="Report" />
+            <TableColumn prefWidth="93.0" text="Date" />
+            <TableColumn prefWidth="118.0" text="Customer" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

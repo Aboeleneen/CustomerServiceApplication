@@ -69,4 +69,19 @@ public class HomePageController implements Initializable {
             window.show();
     }
     
+    /**
+     * show reports 
+     */
+    @FXML
+    public void showReports(ActionEvent event) throws IOException{
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("ReportPage.fxml"));
+            Parent  waitingView = (Parent)loader.load();
+            Scene scene = new Scene(waitingView);
+           
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+
+    }
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="back" prefHeight="445.0" prefWidth="615.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="View.HomePageController">
+<AnchorPane id="back" prefHeight="445.0" prefWidth="615.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HomePageController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -18,7 +18,7 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <Pane id="buttonPane" layoutX="71.0" layoutY="155.0" onMouseClicked="#checkWaitingCustomers" onMousePressed="#checkWaitingCustomers" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+      <Pane id="buttonPane" layoutX="55.0" layoutY="130.0" onMouseClicked="#checkWaitingCustomers" onMousePressed="#checkWaitingCustomers" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
             <BorderPane fx:id="customerPane" layoutX="26.0" prefHeight="148.0" prefWidth="149.0" />
             <Text layoutX="38.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waiting Customers">
@@ -28,7 +28,7 @@
             </Text>
          </children>
       </Pane>
-      <Pane id="buttonPane" layoutX="336.0" layoutY="155.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+      <Pane id="buttonPane" layoutX="340.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
          <children>
             <BorderPane fx:id="brandPane" layoutX="26.0" prefHeight="161.0" prefWidth="149.0" />
             <Text layoutX="50.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Waiting Brands">
@@ -38,5 +38,6 @@
             </Text>
          </children>
       </Pane>
+      <Button id="button" layoutX="255.0" layoutY="373.0" mnemonicParsing="false" onAction="#showReports" text="Reports" />
    </children>
 </AnchorPane>
